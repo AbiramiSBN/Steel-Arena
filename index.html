@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steel Arena Local — Download</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Steel Arena home">
+      <span class="logo">SA</span>
+      <span>Steel Arena</span>
+    </a>
+    <nav>
+      <a href="#downloads">Downloads</a>
+      <a href="#features">Features</a>
+      <a href="#install">Build</a>
+      <a class="nav-download" href="https://github.com/AbiramiSBN/Steel-Arena/releases/download/Linux/V17">Precompiled Linux</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Offline • C++ • raylib • LAN-ready</p>
+        <h1>Steel Arena Local</h1>
+        <p class="tagline">Download the precompiled Linux build, or grab the non-compiled C++ source project and build it yourself.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://github.com/AbiramiSBN/Steel-Arena/releases/download/Linux/V17">Download Precompiled Linux</a>
+          <a class="btn ghost" href="downloads/SteelArenaShooterLocal_v17_source.zip" download>Download Source ZIP</a>
+        </div>
+        <div class="meta">
+          <span>Version v17</span>
+          <span>Made by y8tireu</span>
+          <span>Fully local/offline</span>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="Game preview mockup">
+        <div class="window-bar"><span></span><span></span><span></span></div>
+        <div class="arena-preview">
+          <div class="grid"></div>
+          <div class="player"></div>
+          <div class="bot b1"></div>
+          <div class="bot b2"></div>
+          <div class="beam"></div>
+          <div class="hud h1">HP 100</div>
+          <div class="hud h2">AR • HG • FISTS • GRENADE</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="section downloads">
+      <div class="section-head">
+        <p class="eyebrow">Choose your download</p>
+        <h2>Two ways to play</h2>
+      </div>
+
+      <div class="download-grid">
+        <article class="download-card featured">
+          <div class="badge">Recommended</div>
+          <h3>Precompiled Linux Build</h3>
+          <p>Use this when you just want to download and run the game without compiling the C++ project yourself.</p>
+          <ul>
+            <li>Fastest option</li>
+            <li>Hosted on GitHub Releases</li>
+            <li>Good for Linux users</li>
+          </ul>
+          <a class="btn primary full" href="https://github.com/AbiramiSBN/Steel-Arena/releases/download/Linux/V17">Download Precompiled</a>
+        </article>
+
+        <article class="download-card">
+          <div class="badge muted">Source Code</div>
+          <h3>Non-Compiled Source ZIP</h3>
+          <p>Use this when you want the full C++ raylib project, CMake files, scripts, and source code.</p>
+          <ul>
+            <li>Open in VS Code</li>
+            <li>Build with CMake + raylib</li>
+            <li>Edit or mod the game</li>
+          </ul>
+          <a class="btn ghost full" href="downloads/SteelArenaShooterLocal_v17_source.zip" download>Download Source ZIP</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Game Features</h2>
+      <div class="cards">
+        <article><h3>50 Levels</h3><p>Progress through arenas with stronger bots and changing map layouts.</p></article>
+        <article><h3>Loadout System</h3><p>Pick primary, secondary, melee, and utility items before matches.</p></article>
+        <article><h3>Practice Mode</h3><p>Try weapons and improve aim against training bots.</p></article>
+        <article><h3>LAN Prototype</h3><p>Host and join on the same local network using a generated code.</p></article>
+        <article><h3>Offline Save</h3><p>Coins, unlocks, and progress save locally. No real login or database.</p></article>
+        <article><h3>Camera Modes</h3><p>Switch between first-person and third-person using C.</p></article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <h2>Built for quick local play</h2>
+        <p>Steel Arena Local is a lightweight no-engine C++/raylib arena shooter prototype. The source download includes a VS Code-friendly structure, CMake setup, and build scripts.</p>
+        <ul class="feature-list">
+          <li>Fullscreen toggle with F11</li>
+          <li>Keyboard GUI navigation</li>
+          <li>Primary / Secondary / Melee / Utility shop sections</li>
+          <li>Default loadout: Assault Rifle, Handgun, Fists, Grenade</li>
+        </ul>
+      </div>
+      <div class="mock-panel">
+        <div class="mock-title">LOADOUT</div>
+        <div class="slot active">Primary <strong>Assault Rifle</strong></div>
+        <div class="slot">Secondary <strong>Handgun</strong></div>
+        <div class="slot">Melee <strong>Fists</strong></div>
+        <div class="slot">Utility <strong>Grenade</strong></div>
+      </div>
+    </section>
+
+    <section id="install" class="section install">
+      <h2>Build the Non-Compiled Version</h2>
+      <div class="code-grid">
+        <div>
+          <h3>Ubuntu / Debian</h3>
+          <pre><code>sudo apt update
+sudo apt install build-essential cmake git pkg-config
+cd SteelArenaShooterLocal
+cmake -S . -B build -DCMAKE_PREFIX_PATH=/usr/local
+cmake --build build -j"$(nproc)"
+./build/SteelArenaShooterLocal</code></pre>
+        </div>
+        <div>
+          <h3>Windows with vcpkg</h3>
+          <pre><code>vcpkg install raylib
+cd SteelArenaShooterLocal
+cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
+cmake --build build
+.\build\Debug\SteelArenaShooterLocal.exe</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Steel Arena Local</span>
+    <span>Made by y8tireu</span>
+    <div class="footer-links">
+      <a href="https://github.com/AbiramiSBN/Steel-Arena/releases/download/Linux/V17">Precompiled</a>
+      <a href="downloads/SteelArenaShooterLocal_v17_source.zip" download>Source ZIP</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
