@@ -1,6 +1,6 @@
 # Steel Arena Local v15
 
-Made by y8tireu
+Made by AbiramiSBN
 
 A fully local/offline no-engine C++17 + raylib arena shooter prototype.
 
